@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+
+  & input {
+    width: 100%;
+    height: 100%;
+    height: 40px;
+
+    border-bottom: 2px solid var(--strokeColor1);
+
+    &:active, &:focus {
+      border-color: var(--primaryColor1);
+    }
+
+    &[aria-invalid=true] {
+      border-color: var(--errorColor1);
+    }
+
+    &[data-accept=true] {
+      border-color: var(--acceptColor1);
+    }
+  }
+}
+.error {
+  padding-top: 5px;
+  
+  color: var(--errorColor1);
+}

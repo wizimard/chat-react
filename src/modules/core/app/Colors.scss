@@ -1,0 +1,55 @@
+$themes: (
+  appBgColor: (
+    light: rgba(#B5B5B5, 0.5),
+    dark: rgba(#25272A, 0.8)
+  ),
+  bgColor1: (
+    light: #B5B5B5,
+    dark: #25272A
+  ),
+  fontColor1: (
+    light: #25272A,
+    dark: #B5B5B5
+  ),
+  placeholderColor: (
+    light: rgba(#25272A, 0.5),
+    dark: rgba(#B5B5B5, 0.5)
+  ),
+  strokeColor1: (
+    light: #464646,
+    dark: #464646
+  ),
+  primaryColor1: (
+    light: #3577EF,
+    dark: #3577EF
+  ),
+  primaryFontColor1: (
+    light: #000,
+    dark: #fff
+  ),
+  errorColor1: (
+    light: #CD1010,
+    dark: #CD1010
+  ),
+  acceptColor1: (
+    light: #32E742,
+    dark: #32E742
+  )
+);
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.light {
+  @include styles('light');
+}
+.dark {
+  @include styles('dark');
+}
